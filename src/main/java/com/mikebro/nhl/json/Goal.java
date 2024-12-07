@@ -5,10 +5,14 @@ import lombok.Data;
 @Data
 public class Goal {
 	Integer period;
-	Period periodDescriptor;
+	PeriodDescriptor periodDescriptor;
 	String timeInPeriod;
 	Long playerId;
 	Name name;
+	Name firstName;
+	Name lastName;
+	String goalModifier;
+	
 	String mugshot;
 	String teamAbbrev;
 	Integer goalsToDate;

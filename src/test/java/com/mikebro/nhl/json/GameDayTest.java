@@ -26,15 +26,15 @@ public class GameDayTest {
 
 	@Test
 	public void testGameDayJson() {
-		String gameDayJson = "{\"date\":\"2024-11-22\",\"dayAbbrev\":\"FRI\",\"numberOfGames\":2}";
-		GameDay day = JsonHelper.jsonToObject( gameDayJson, GameDay.class);
+		String json = "{\"date\":\"2024-11-22\",\"dayAbbrev\":\"FRI\",\"numberOfGames\":2}";
+		GameDay day = JsonHelper.jsonToObject( json, GameDay.class);
 
 		assertEquals( LocalDate.parse( "2024-11-22" ), day.getDate() );
 		assertEquals( "FRI", day.getDayAbbrev() );
 		assertEquals( (Integer) 2, day.getNumberOfGames() );
 
 		String dayString = JsonHelper.objectToJson( day );
-		assertEquals( gameDayJson, dayString );
+		assertEquals( json, dayString );
 	}
 
 }

@@ -3,7 +3,10 @@ package com.mikebro.nhl.json;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  * <p>This is used by the NHL api for both player names and the "names" of buildings.</p>
@@ -13,6 +16,9 @@ import lombok.Data;
  * 
  */
 @Data
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Name {
 	@JsonProperty("default")

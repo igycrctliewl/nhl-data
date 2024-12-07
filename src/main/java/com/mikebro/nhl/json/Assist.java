@@ -9,8 +9,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class PeriodDescriptor {
-	Integer number;
-	String periodType;
-	Integer maxRegulationPeriods;
+public class Assist {
+
+	Long playerId;
+
+	Player name;
+
+	Integer assistsToDate;
 }

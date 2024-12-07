@@ -2,11 +2,10 @@ package com.mikebro.nhl;
 
 import com.mikebro.jsonhelper.JsonHelper;
 import com.mikebro.nhl.json.Broadcasters;
-import com.mikebro.nhl.json.Building;
 import com.mikebro.nhl.json.GameOutcome;
 import com.mikebro.nhl.json.Goals;
 import com.mikebro.nhl.json.HomeTeam;
-import com.mikebro.nhl.json.PeriodDescriptor;
+import com.mikebro.nhl.json.Venue;
 import com.mikebro.nhl.json.WaysToLoseYourMoney;
 
 
@@ -23,17 +22,12 @@ public class Scores {
 		System.out.println( tvPeople );
 
 		String buildingJson = "{\"venue\":{\"default\":\"Scotiabank Saddledome\"}}";
-		Building building = JsonHelper.jsonToObject(buildingJson, Building.class);
-		System.out.println( building );
+		Venue venue = JsonHelper.jsonToObject(buildingJson, Venue.class);
+		System.out.println( venue );
 
 		String teamJson = "{\"homeTeam\":{\"id\":20,\"name\":{\"default\":\"Flames\"},\"abbrev\":\"CGY\",\"score\":3,\"sog\":29,\"logo\":\"https://assets.nhle.com/logos/nhl/svg/CGY_light.svg\"}}";
 		HomeTeam homeTeam = JsonHelper.jsonToObject(teamJson, HomeTeam.class);
 		System.out.println( homeTeam );
-
-
-		String periodJson = "{\"periodDescriptor\":{\"number\":4,\"periodType\":\"OT\"}}";
-		PeriodDescriptor period = JsonHelper.jsonToObject(periodJson, PeriodDescriptor.class);
-		System.out.println( period );
 
 		String outcomeJson = "{\"gameOutcome\":{\"lastPeriodType\":\"OT\",\"otPeriods\":1}}";
 		GameOutcome outcome = JsonHelper.jsonToObject(outcomeJson, GameOutcome.class);
@@ -45,3 +39,5 @@ public class Scores {
 	}
 
 }
+
+
