@@ -3,9 +3,7 @@ package com.mikebro.nhl;
 import com.mikebro.jsonhelper.JsonHelper;
 import com.mikebro.nhl.json.Broadcasters;
 import com.mikebro.nhl.json.GameOutcome;
-import com.mikebro.nhl.json.Goals;
 import com.mikebro.nhl.json.HomeTeam;
-import com.mikebro.nhl.json.Venue;
 import com.mikebro.nhl.json.WaysToLoseYourMoney;
 
 
@@ -21,10 +19,6 @@ public class Scores {
 		Broadcasters tvPeople = JsonHelper.jsonToObject(tvJson, Broadcasters.class);
 		System.out.println( tvPeople );
 
-		String buildingJson = "{\"venue\":{\"default\":\"Scotiabank Saddledome\"}}";
-		Venue venue = JsonHelper.jsonToObject(buildingJson, Venue.class);
-		System.out.println( venue );
-
 		String teamJson = "{\"homeTeam\":{\"id\":20,\"name\":{\"default\":\"Flames\"},\"abbrev\":\"CGY\",\"score\":3,\"sog\":29,\"logo\":\"https://assets.nhle.com/logos/nhl/svg/CGY_light.svg\"}}";
 		HomeTeam homeTeam = JsonHelper.jsonToObject(teamJson, HomeTeam.class);
 		System.out.println( homeTeam );
@@ -32,10 +26,6 @@ public class Scores {
 		String outcomeJson = "{\"gameOutcome\":{\"lastPeriodType\":\"OT\",\"otPeriods\":1}}";
 		GameOutcome outcome = JsonHelper.jsonToObject(outcomeJson, GameOutcome.class);
 		System.out.println( outcome );
-
-		String goalsJson = "{\"goals\":[{\"period\":1,\"periodDescriptor\":{\"number\":1,\"periodType\":\"REG\"},\"timeInPeriod\":\"12:55\",\"playerId\":8478430,\"name\":{\"default\":\"O. Kylington\"},\"mugshot\":\"https://assets.nhle.com/mugs/nhl/20232024/CGY/8478430.png\",\"teamAbbrev\":\"CGY\",\"goalsToDate\":2,\"awayScore\":0,\"homeScore\":1,\"strength\":\"EV\",\"highlightClip\":6347423808112},{\"period\":1,\"periodDescriptor\":{\"number\":1,\"periodType\":\"REG\"},\"timeInPeriod\":\"18:41\",\"playerId\":8475745,\"name\":{\"default\":\"C. Coyle\"},\"mugshot\":\"https://assets.nhle.com/mugs/nhl/20232024/BOS/8475745.png\",\"teamAbbrev\":\"BOS\",\"goalsToDate\":19,\"awayScore\":1,\"homeScore\":1,\"strength\":\"EV\",\"highlightClip\":6347423646112},{\"period\":1,\"periodDescriptor\":{\"number\":1,\"periodType\":\"REG\"},\"timeInPeriod\":\"19:23\",\"playerId\":8481028,\"name\":{\"default\":\"M. Pospisil\",\"cs\":\"M. Pospíšil\",\"sk\":\"M. Pospíšil\"},\"mugshot\":\"https://assets.nhle.com/mugs/nhl/20232024/CGY/8481028.png\",\"teamAbbrev\":\"CGY\",\"goalsToDate\":5,\"awayScore\":1,\"homeScore\":2,\"strength\":\"EV\",\"highlightClip\":6347423652112},{\"period\":3,\"periodDescriptor\":{\"number\":3,\"periodType\":\"REG\"},\"timeInPeriod\":\"02:33\",\"playerId\":8475745,\"name\":{\"default\":\"C. Coyle\"},\"mugshot\":\"https://assets.nhle.com/mugs/nhl/20232024/BOS/8475745.png\",\"teamAbbrev\":\"BOS\",\"goalsToDate\":20,\"awayScore\":2,\"homeScore\":2,\"strength\":\"EV\",\"highlightClip\":6347428036112},{\"period\":4,\"periodDescriptor\":{\"number\":4,\"periodType\":\"OT\"},\"timeInPeriod\":\"03:56\",\"playerId\":8475172,\"name\":{\"default\":\"N. Kadri\"},\"mugshot\":\"https://assets.nhle.com/mugs/nhl/20232024/CGY/8475172.png\",\"teamAbbrev\":\"CGY\",\"goalsToDate\":20,\"awayScore\":2,\"homeScore\":3,\"strength\":\"EV\",\"highlightClip\":6347429650112}]}";
-		Goals goals = JsonHelper.jsonToObject(goalsJson, Goals.class);
-		System.out.println( goals );
 	}
 
 }

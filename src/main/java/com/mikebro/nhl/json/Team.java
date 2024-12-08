@@ -4,10 +4,10 @@ import lombok.Data;
 
 @Data
 public class Team {
-	Integer id;
-	Name name;
-	String abbrev;
-	Integer score;
-	Integer sog;
-	String logo;
+	private Integer id;
+	private Name name;
+	private String abbrev;
+	private Integer score;
+	private Integer sog;
+	private String logo;
 }

@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class HomeTeam {
-	Team homeTeam;
+	private Team homeTeam;
 }

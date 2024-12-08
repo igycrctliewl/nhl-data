@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Assist {
 
-	Long playerId;
+	private Long playerId;
 
-	Player name;
+	private Player name;
 
-	Integer assistsToDate;
+	private Integer assistsToDate;
 }

@@ -20,9 +20,9 @@ public class GameDay {
 
 	@JsonSerialize(using = JsonDateSerializer.class)
 	@JsonDeserialize(using = JsonDateDeserializer.class)
-	LocalDate date;
+	private LocalDate date;
 
-	String dayAbbrev;
+	private String dayAbbrev;
 
-	Integer numberOfGames;
+	private Integer numberOfGames;
 }

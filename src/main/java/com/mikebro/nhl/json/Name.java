@@ -22,5 +22,10 @@ import lombok.experimental.SuperBuilder;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Name {
 	@JsonProperty("default")
-	String name;
+	private String name;
+
+	@Override
+	public String toString() {
+		return ( this.name == null ? "" : this.name );
+	}
 }

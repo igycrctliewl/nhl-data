@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class Outcome {
-	String lastPeriodType;
-	Integer otPeriods;
+	private String lastPeriodType;
+	private Integer otPeriods;
 }

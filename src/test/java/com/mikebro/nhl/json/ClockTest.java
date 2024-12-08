@@ -28,14 +28,13 @@ public class ClockTest {
 
 	@Test
 	public void testClockJson() {
-		String json = "{\"clock\":{\"timeRemaining\":\"01:04\",\"secondsRemaining\":64,\"running\":true,\"inIntermission\":true}}";
-		CurrentClock clock = JsonHelper.jsonToObject(json, CurrentClock.class);
-		Clock clockObj = clock.getClock();
+		String json = "{\"timeRemaining\":\"01:04\",\"secondsRemaining\":64,\"running\":true,\"inIntermission\":true}";
+		Clock clock = JsonHelper.jsonToObject(json, Clock.class);
 
-		assertTrue( clockObj.isInIntermission() );
-		assertTrue( clockObj.isRunning() );
-		assertEquals( (Integer) 64, clockObj.getSecondsRemaining() );
-		assertEquals( "01:04", clockObj.getTimeRemaining() );
+		assertTrue( clock.isInIntermission() );
+		assertTrue( clock.isRunning() );
+		assertEquals( (Integer) 64, clock.getSecondsRemaining() );
+		assertEquals( "01:04", clock.getTimeRemaining() );
 	}
 
 }

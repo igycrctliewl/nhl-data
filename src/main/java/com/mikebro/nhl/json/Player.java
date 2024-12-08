@@ -9,4 +9,8 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 public class Player extends Name {
 
+	@Override
+	public String toString() {
+		return super.toString();
+	}
 }

@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PeriodDescriptor {
-	Integer number;
-	String periodType;
-	Integer maxRegulationPeriods;
+	private Integer number;
+	private String periodType;
+	private Integer maxRegulationPeriods;
 }

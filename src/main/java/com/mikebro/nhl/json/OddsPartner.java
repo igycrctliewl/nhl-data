@@ -4,12 +4,12 @@ import lombok.Data;
 
 @Data
 public class OddsPartner {
-	Integer partnerId;
-	String country;
-	String name;
-	String imageUrl;
-	String siteUrl;
-	String bgColor;
-	String textColor;
-	String accentColor;
+	private Integer partnerId;
+	private String country;
+	private String name;
+	private String imageUrl;
+	private String siteUrl;
+	private String bgColor;
+	private String textColor;
+	private String accentColor;
 }

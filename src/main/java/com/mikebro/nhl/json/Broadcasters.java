@@ -6,5 +6,5 @@ import lombok.Data;
 
 @Data
 public class Broadcasters {
-	List<TvBroadcast> tvBroadcasts;
+	private List<TvBroadcast> tvBroadcasts;
 }

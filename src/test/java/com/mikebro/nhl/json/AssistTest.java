@@ -18,7 +18,7 @@ public class AssistTest {
 				.assistsToDate( 1 )
 				.build();
 
-		assertEquals( (Long) 8476878L, assist.playerId );
+		assertEquals( (Long) 8476878L, assist.getPlayerId() );
 		assertEquals( "Z. Girgensons", assist.getName().getName() );
 		assertEquals( (Integer) 1, assist.getAssistsToDate() );
 	}
@@ -29,7 +29,7 @@ public class AssistTest {
 		String json = "{\"playerId\":8476878,\"name\":{\"default\":\"Z. Girgensons\"},\"assistsToDate\":1}";
 		Assist assist = JsonHelper.jsonToObject( json, Assist.class);
 
-		assertEquals( (Long) 8476878L, assist.playerId );
+		assertEquals( (Long) 8476878L, assist.getPlayerId() );
 		assertEquals( "Z. Girgensons", assist.getName().getName() );
 		assertEquals( (Integer) 1, assist.getAssistsToDate() );
 

@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Clock {
 
-	String timeRemaining;
+	private String timeRemaining;
 
-	Integer secondsRemaining;
+	private Integer secondsRemaining;
 
-	boolean running;
+	private boolean running;
 
-	boolean inIntermission;
+	private boolean inIntermission;
 }
 

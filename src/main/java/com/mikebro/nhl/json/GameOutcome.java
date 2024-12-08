@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class GameOutcome {
-	Outcome gameOutcome;
+	private Outcome gameOutcome;
 }

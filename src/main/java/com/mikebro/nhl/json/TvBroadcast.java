@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class TvBroadcast {
-	Integer id;
-	String market;
-	String countryCode;
-	String network;
-	Integer sequenceNumber;
+	private Integer id;
+	private String market;
+	private String countryCode;
+	private String network;
+	private Integer sequenceNumber;
 }
