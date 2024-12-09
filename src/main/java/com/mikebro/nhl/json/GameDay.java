@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.mikebro.jsonhelper.serializer.JsonDateDeserializer;
-import com.mikebro.jsonhelper.serializer.JsonDateSerializer;
+import com.mikebro.jsonhelper.serializer.LocalDateDeserializer;
+import com.mikebro.jsonhelper.serializer.LocalDateSerializer;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,8 +18,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class GameDay {
 
-	@JsonSerialize(using = JsonDateSerializer.class)
-	@JsonDeserialize(using = JsonDateDeserializer.class)
+	@JsonSerialize(using = LocalDateSerializer.class)
+	@JsonDeserialize(using = LocalDateDeserializer.class)
 	private LocalDate date;
 
 	private String dayAbbrev;
