@@ -1,4 +1,4 @@
-package com.mikebro.nhl.http;
+package com.mikebro.nhl.service.impl;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,14 +7,17 @@ import java.net.URL;
 
 import org.springframework.stereotype.Service;
 
+import com.mikebro.nhl.service.HTTPService;
+
 /**
  * With thanks to https://stackoverflow.com/questions/1485708/how-do-i-do-a-http-get-in-java
  * @author mikebro
  *
  */
 @Service
-public class HTTPService {
+public class HTTPServiceImpl implements HTTPService {
 
+	@Override
 	public String getHTML(String urlToRead) {
 		try {
 			StringBuilder result = new StringBuilder();
@@ -40,7 +43,7 @@ public class HTTPService {
 	}
 
 	public static void main(String[] args) throws Exception {
-		HTTP http = new HTTP();
+		HTTPServiceImpl http = new HTTPServiceImpl();
 		String urlString = "https://api-web.nhle.com/v1/score/2024-12-14";
 		String responseString = http.getHTML( urlString );
 		System.out.println( responseString );
