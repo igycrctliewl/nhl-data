@@ -6,11 +6,16 @@ import org.junit.Test;
 
 import com.mikebro.jsonhelper.JsonHelper;
 
+/**
+ * Tests for Name class when used as the name of a venue
+ * @author mikebro
+ *
+ */
 public class VenueTest {
 
 	@Test
 	public void testVenue() {
-		Venue venue = Venue.builder()
+		Name venue = Name.builder()
 				.name( "Saddledome" )
 				.build();
 
@@ -21,7 +26,7 @@ public class VenueTest {
 	@Test
 	public void testVenueJson() {
 		String json = "{\"default\":\"Saddledome\"}";
-		Venue venue = JsonHelper.jsonToObject( json, Venue.class);
+		Name venue = JsonHelper.jsonToObject( json, Name.class);
 
 		assertEquals( "Saddledome", venue.getName() );
 

@@ -12,7 +12,7 @@ public class AssistTest {
 	public void testAssist() {
 		Assist assist = Assist.builder()
 				.playerId( 8476878L )
-				.name( Player.builder()
+				.name( Name.builder()
 						.name( "Z. Girgensons" )
 						.build() )
 				.assistsToDate( 1 )

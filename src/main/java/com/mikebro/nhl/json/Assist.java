@@ -13,7 +13,7 @@ public class Assist {
 
 	private Long playerId;
 
-	private Player name;
+	private Name name;
 
 	private Integer assistsToDate;
 }

@@ -16,9 +16,9 @@ public class Goal {
 	private PeriodDescriptor periodDescriptor;
 	private String timeInPeriod;
 	private Long playerId;
-	private Player name;
-	private Player firstName;
-	private Player lastName;
+	private Name name;
+	private Name firstName;
+	private Name lastName;
 	private String goalModifier;
 	private List<Assist> assists;
 	private String mugshot;

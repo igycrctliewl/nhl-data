@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNotNull;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.TimeZone;
 
 import org.junit.Test;
 
