@@ -24,14 +24,16 @@ public class Schedule {
 	@JsonSerialize(using = LocalDateSerializer.class)
 	@JsonDeserialize(using = LocalDateDeserializer.class)
 	private LocalDate prevDate;
-	
+
 	@JsonSerialize(using = LocalDateSerializer.class)
 	@JsonDeserialize(using = LocalDateDeserializer.class)
 	private LocalDate currentDate;
-	
+
 	@JsonSerialize(using = LocalDateSerializer.class)
 	@JsonDeserialize(using = LocalDateDeserializer.class)
 	private LocalDate nextDate;
-	
+
 	private List<GameDay> gameWeek;
+
+	private List<Game> games;
 }

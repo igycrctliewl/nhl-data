@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
@@ -28,6 +29,12 @@ public class DateInstantExperimental {
 
 		assertEquals( instant, outInstant );
 		assertEquals( dateString, outInstant.toString() );
+	}
+
+	@Test
+	public void testLocalDate() {
+		LocalDate date = LocalDate.now();
+		assertNotNull( date );
 	}
 
 }
