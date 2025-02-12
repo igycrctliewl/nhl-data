@@ -1,0 +1,2 @@
+NHL API reference:
+https://github.com/Zmalski/NHL-API-Reference/tree/main

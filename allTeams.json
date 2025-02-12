@@ -1,0 +1,196 @@
+{
+  "data": [
+    {
+      "fullName": "Montréal Canadiens",
+      "placeName": "Montréal",
+      "nickName": "Canadiens",
+      "triCode": "MTL"
+    },
+    {
+      "fullName": "Buffalo Sabres",
+      "placeName": "Buffalo",
+      "nickName": "Sabres",
+      "triCode": "BUF"
+    },
+    {
+      "fullName": "New York Islanders",
+      "placeName": "New York",
+      "nickName": "Islanders",
+      "triCode": "NYI"
+    },
+    {
+      "fullName": "San Jose Sharks",
+      "placeName": "San Jose",
+      "nickName": "Sharks",
+      "triCode": "SJS"
+    },
+    {
+      "fullName": "Columbus Blue Jackets",
+      "placeName": "Columbus",
+      "nickName": "Blue Jackets",
+      "triCode": "CBJ"
+    },
+    {
+      "fullName": "Pittsburgh Penguins",
+      "placeName": "Pittsburgh",
+      "nickName": "Penguins",
+      "triCode": "PIT"
+    },
+    {
+      "fullName": "Florida Panthers",
+      "placeName": "Florida",
+      "nickName": "Panthers",
+      "triCode": "FLA"
+    },
+    {
+      "fullName": "Carolina Hurricanes",
+      "placeName": "Carolina",
+      "nickName": "Hurricanes",
+      "triCode": "CAR"
+    },
+    {
+      "fullName": "Vegas Golden Knights",
+      "placeName": "Las Vegas",
+      "nickName": "Golden Knights",
+      "triCode": "VGK"
+    },
+    {
+      "fullName": "Dallas Stars",
+      "placeName": "Dallas",
+      "nickName": "Stars",
+      "triCode": "DAL"
+    },
+    {
+      "fullName": "Winnipeg Jets",
+      "placeName": "Winnipeg",
+      "nickName": "Jets",
+      "triCode": "WPG"
+    },
+    {
+      "fullName": "Tampa Bay Lightning",
+      "placeName": "Tampa Bay",
+      "nickName": "Lightning",
+      "triCode": "TBL"
+    },
+    {
+      "fullName": "Utah Hockey Club",
+      "placeName": "Utah",
+      "nickName": "Utahs",
+      "triCode": "UTA"
+    },
+    {
+      "fullName": "Nashville Predators",
+      "placeName": "Nashville",
+      "nickName": "Predators",
+      "triCode": "NSH"
+    },
+    {
+      "fullName": "Philadelphia Flyers",
+      "placeName": "Philadelphia",
+      "nickName": "Flyers",
+      "triCode": "PHI"
+    },
+    {
+      "fullName": "New Jersey Devils",
+      "placeName": "New Jersey",
+      "nickName": "Devils",
+      "triCode": "NJD"
+    },
+    {
+      "fullName": "Ottawa Senators",
+      "placeName": "Ottawa",
+      "nickName": "Senators",
+      "triCode": "OTT"
+    },
+    {
+      "fullName": "Colorado Avalanche",
+      "placeName": "Colorado",
+      "nickName": "Avalanche",
+      "triCode": "COL"
+    },
+    {
+      "fullName": "Seattle Kraken",
+      "placeName": "Seattle",
+      "nickName": "Kraken",
+      "triCode": "SEA"
+    },
+    {
+      "fullName": "Washington Capitals",
+      "placeName": "Washington",
+      "nickName": "Capitals",
+      "triCode": "WSH"
+    },
+    {
+      "fullName": "Anaheim Ducks",
+      "placeName": "Anaheim",
+      "nickName": "Ducks",
+      "triCode": "ANA"
+    },
+    {
+      "fullName": "Los Angeles Kings",
+      "placeName": "Los Angeles",
+      "nickName": "Kings",
+      "triCode": "LAK"
+    },
+    {
+      "fullName": "Vancouver Canucks",
+      "placeName": "Vancouver",
+      "nickName": "Canucks",
+      "triCode": "VAN"
+    },
+    {
+      "fullName": "Minnesota Wild",
+      "placeName": "Minnesota",
+      "nickName": "Wild",
+      "triCode": "MIN"
+    },
+    {
+      "fullName": "Toronto Maple Leafs",
+      "placeName": "Toronto",
+      "nickName": "Maple Leafs",
+      "triCode": "TOR"
+    },
+    {
+      "fullName": "New York Rangers",
+      "placeName": "New York",
+      "nickName": "Rangers",
+      "triCode": "NYR"
+    },
+    {
+      "fullName": "Edmonton Oilers",
+      "placeName": "Edmonton",
+      "nickName": "Oilers",
+      "triCode": "EDM"
+    },
+    {
+      "fullName": "Calgary Flames",
+      "placeName": "Calgary",
+      "nickName": "Flames",
+      "triCode": "CGY"
+    },
+    {
+      "fullName": "Boston Bruins",
+      "placeName": "Boston",
+      "nickName": "Bruins",
+      "triCode": "BOS"
+    },
+    {
+      "fullName": "St. Louis Blues",
+      "placeName": "St. Louis",
+      "nickName": "Blues",
+      "triCode": "STL"
+    },
+    {
+      "fullName": "Chicago Blackhawks",
+      "placeName": "Chicago",
+      "nickName": "Blackhawks",
+      "triCode": "CHI"
+    },
+    {
+      "fullName": "Detroit Red Wings",
+      "placeName": "Detroit",
+      "nickName": "Red Wings",
+      "triCode": "DET"
+    }
+  ]
+}
