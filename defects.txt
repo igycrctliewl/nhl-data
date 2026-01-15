@@ -1,4 +1,77 @@
+HTTP connect defect.
+when I wake the computer back up after some period of sleep, I often get an error such as the following.
+I need to change HTTPServiceImpl to catch the error and try to reestablish the connection
+The try-with-resources statement is failing.  What if I create a new class implementing Closable
+that uses the connection to create a reader and returns the reader?  Perhaps this new class needs
+to create the connection object as well.  If the SocketException is thrown, after a brief pause,
+both the connection and the reader would be re-created
+
+HTTP connect read failed
+java.net.SocketException: Network is unreachable: connect
+        at java.base/java.net.PlainSocketImpl.connect0(Native Method)
+        at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:101)
+        at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+        at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+        at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+        at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.base/java.net.Socket.connect(Socket.java:609)
+        at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:289)
+        at java.base/sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:173)
+        at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:182)
+        at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474)
+        at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569)
+        at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:265)
+        at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:372)
+        at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:203)
+        at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187)
+        at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081)
+        at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:189)
+        at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1592)
+        at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+====>   at com.mikebro.nhl.service.impl.HTTPServiceImpl.getHTML(HTTPServiceImpl.java:28)
+        at com.mikebro.nhl.service.impl.NHLServiceImpl.getSchedule(NHLServiceImpl.java:30)
+        at com.mikebro.nhl.control.GameDayPane.lambda$refreshSchedule$1(GameDayPane.java:119)
+        at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1736)
+        at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1728)
+        at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+        at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+        at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+        at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+        at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1]
+        at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+        at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4996)
+        at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4898)
+        at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3848)
+        at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3816)
+        at com.mikebro.jsonhelper.JsonHelper.jsonToObject(JsonHelper.java:55)
+        at com.mikebro.nhl.service.impl.NHLServiceImpl.parseJson(NHLServiceImpl.java:40)
+        at com.mikebro.nhl.service.impl.NHLServiceImpl.getSchedule(NHLServiceImpl.java:30)
+        at com.mikebro.nhl.control.GameDayPane.lambda$refreshSchedule$1(GameDayPane.java:119)
+        at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1736)
+        at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1728)
+        at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+        at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+        at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+        at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+        at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+Exception in thread "JavaFX Application Thread" java.lang.NullPointerException
+        at com.mikebro.nhl.control.GameDayPane.lambda$redrawPane$2(GameDayPane.java:135)
+        at com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:428)
+        at java.base/java.security.AccessController.doPrivileged(Native Method)
+        at com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:427)
+        at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+        at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+        at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+        at java.base/java.lang.Thread.run(Thread.java:829)
+
+
+
+
+
 discovered defect getting Schedule:
+I'm pretty sure this was fixed by making fields optional in the json structure
 
 com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "record" (class com.mikebro.nhl.json.Team), not marked as ignorable (6 known properties: "abbrev", "id", "score", "name", "sog", "logo"])
  at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 36864] (through reference chain: com.mikebro.nhl.json.Schedule["games"]->java.util.ArrayList[5]->com.mikebro.nhl.json.Game["awayTeam"]->com.mikebro.nhl.json.Team["record"])
