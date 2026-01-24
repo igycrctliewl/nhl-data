@@ -14,6 +14,12 @@ instance variable "schedule" or the "games" property of "schedule" is null.  The
 not this http service.
 
 
+FULL CIRCLE
+I thought about changes to NHLApp, but those would have the same problem if the connection is still
+unavailable.  Now my thought is to make sure NHLServiceImpl always returns a valid Schedule object
+when one is requested, even if the corresponding input data is missing.
+
+
 HTTP connect read failed
 java.net.SocketException: Network is unreachable: connect
         at java.base/java.net.PlainSocketImpl.connect0(Native Method)

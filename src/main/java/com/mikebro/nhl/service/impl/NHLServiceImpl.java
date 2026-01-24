@@ -1,6 +1,7 @@
 package com.mikebro.nhl.service.impl;
 
 import java.time.LocalDate;
+import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,6 +38,17 @@ public class NHLServiceImpl implements NHLService {
 
 
 	private Schedule parseJson( String json ) {
-		return JsonHelper.jsonToObject( json, Schedule.class);
+		try {
+			return JsonHelper.jsonToObject( json, Schedule.class);
+		} catch( Exception mix ) {
+			return dummySchedule();
+		}
+	}
+
+
+	private Schedule dummySchedule() {
+		return Schedule.builder()
+				.games( Collections.emptyList() )
+				.build();
 	}
 }
