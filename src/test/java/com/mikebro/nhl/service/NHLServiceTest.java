@@ -33,6 +33,14 @@ public class NHLServiceTest {
 		assertEquals( 11, schedule.getGames().size() );
 	}
 
+	@Test
+	public void testScheduleException() {
+		when( httpService.getHTML( any( String.class ) )).thenReturn( "" );
+		Schedule schedule = nhlService.getTodaySchedule();
+		assertNotNull( schedule );
+		assertEquals( 0, schedule.getGames().size() );
+	}
+
 
 
 	private String scheduleJson() {

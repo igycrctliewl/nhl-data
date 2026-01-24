@@ -38,11 +38,8 @@ public class NHLServiceImpl implements NHLService {
 
 
 	private Schedule parseJson( String json ) {
-		try {
-			return JsonHelper.jsonToObject( json, Schedule.class);
-		} catch( Exception mix ) {
-			return dummySchedule();
-		}
+		Schedule s = JsonHelper.jsonToObject( json, Schedule.class );
+		return s != null ? s : dummySchedule();
 	}
 
 
