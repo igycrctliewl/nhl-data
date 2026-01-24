@@ -6,6 +6,14 @@ that uses the connection to create a reader and returns the reader?  Perhaps thi
 to create the connection object as well.  If the SocketException is thrown, after a brief pause,
 both the connection and the reader would be re-created
 
+
+2026-01-24 : new analysis
+While it's true the getHTML method is failing because of an interruption to the internet connection,
+the app failure is really in GameDayPane when it's trying to redraw the day's schedule.  Either the
+instance variable "schedule" or the "games" property of "schedule" is null.  The problem is in NHLApp,
+not this http service.
+
+
 HTTP connect read failed
 java.net.SocketException: Network is unreachable: connect
         at java.base/java.net.PlainSocketImpl.connect0(Native Method)
@@ -71,7 +79,9 @@ Exception in thread "JavaFX Application Thread" java.lang.NullPointerException
 
 
 discovered defect getting Schedule:
-I'm pretty sure this was fixed by making fields optional in the json structure
+There are more fields in the data stream from NHL than I have defined in my data structures.
+To prevent exceptions, I have set "ignoreUnknown = true" in my data structures so that extra fields
+just disappear.
 
 com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "record" (class com.mikebro.nhl.json.Team), not marked as ignorable (6 known properties: "abbrev", "id", "score", "name", "sog", "logo"])
  at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 36864] (through reference chain: com.mikebro.nhl.json.Schedule["games"]->java.util.ArrayList[5]->com.mikebro.nhl.json.Game["awayTeam"]->com.mikebro.nhl.json.Team["record"])
